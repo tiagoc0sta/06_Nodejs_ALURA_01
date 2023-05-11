@@ -16,13 +16,9 @@ app.use(express.json());
 //   { id: 2, titulo: 'O Hobbit' },
 // ];
 
-app.get('/', (req, res) => {
-  res.status(200).send('Curso de Node');
-});
-
 app.get('/livros', async (req, res) => {
   try {
-    const livros = await Livro.find();
+    const livros = await livros.find();
     res.status(200).json(livros);
   } catch (err) {
     // handle the error
